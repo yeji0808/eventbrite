@@ -1,0 +1,149 @@
+.navbar-nav {
+  margin-left: 62%; }
+
+.big {
+  height: 27em;
+  overflow: hidden;
+  margin: 0; }
+
+img.main {
+  width: 100%; }
+
+img.card-img-top {
+  height: 9em; }
+
+.yeji {
+  color: #f6682f;
+  left: 18.5%;
+  top: -7em;
+  width: 63%;
+  height: 12em;
+  background-color: white;
+  text-align: center;
+  box-shadow: 1px 1px 3px #bebebe;
+  position: relative; }
+
+.pop {
+  font-size: 25px;
+  color: gray;
+  text-align: center; }
+
+.block {
+  margin: 2% 20%; }
+
+.card {
+  height: 20%; }
+
+.card-text {
+  font-size: 11px; }
+
+.card-body {
+  height: 6em; }
+
+.card-title {
+  font-size: 15px; }
+
+.card-date {
+  font-size: 13px;
+  color: gray; }
+
+.foot {
+  text-align: center; }
+
+.foot1 {
+  text-align: center;
+  color: gray;
+  margin-top: 3em;
+  margin-bottom: 1em; }
+
+.footimg {
+  width: 19%;
+  height: 13em;
+  margin: 0.6em;
+  opacity: 1.0; }
+  .footimg:hover {
+    transform: scale(1.1); }
+
+.footimg2 {
+  width: 39.5%;
+  height: 13em;
+  margin: 0.8em;
+  opacity: 1.0; }
+  .footimg2:hover {
+    opacity: 0.8; }
+
+.Fimg {
+  text-align: center; }
+
+.footer {
+  background-color: #282c35;
+  margin-top: 2em;
+  width: 100%;
+  height: 37em;
+  padding: 0 15%; }
+
+.ultype {
+  list-style-type: none;
+  float: left;
+  color: #b1b1b1;
+  font-size: 12px;
+  line-height: 200%;
+  padding: 5% 5% 0 5%;
+  margin: 0; }
+
+.team {
+  position: relative;
+  float: left;
+  width: 100%;
+  color: #b1b1b1;
+  padding-top: 4%;
+  padding-top: #b1b1b1; }
+
+.unit {
+  font-size: 16px; }
+
+.form-inline {
+  margin-left: 14%; }
+
+h1 {
+  padding-top: 4%;
+  padding-bottom: 3%; }
+
+@media only screen and (max-width: 408px) {
+  div.yeji {
+    display: none; }
+  div.container {
+    height: 13em; }
+  .pop {
+    font-size: 1em; }
+  .footimg {
+    height: 30%; }
+  .footimg2 {
+    height: 30%; }
+  .ultype1 {
+    display: none; }
+  .sr-only1 {
+    display: none; } }
+
+@media only screen and (max-width: 850px) {
+  .pop {
+    font-size: 1em; }
+  .footimg {
+    height: 30%; }
+  .footimg2 {
+    height: 30%; }
+  .ultype1 {
+    display: none; }
+  form.form-inline {
+    display: none; }
+  div.container {
+    height: 13em; } }
+
+.ultype2 > li {
+  list-style-type: none;
+  float: left;
+  font-size: 12px;
+  padding-right: 3%;
+  padding-bottom: 1%; }
+
+/*# sourceMappingURL=style.css.map */

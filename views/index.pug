@@ -1,5 +1,617 @@
 extends layout
-
 block content
-  h1= title
-  p Welcome to #{title}
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      a.navbar-brand(href='#') Eventbrite
+      |     
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      |     
+      #navbarNavDropdown.collapse.navbar-collapse
+        ul.navbar-nav
+          li.nav-item.active
+            a.nav-link(href='#') BROWSE EVENTS
+          |         
+          li.nav-item.dropdown
+            a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='http://example.com', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              | ORGANIZE
+            |           
+            .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+              a.dropdown-item(href='#') Overview
+              |             
+              a.dropdown-item(href='#') Pricing
+              |             
+              a.dropdown-item(href='#') Blog
+              |             
+              a.dropdown-item(href='#') Resources
+          |         
+          li.nav-item.dropdown
+            a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='http://example.com', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              | HELP
+            |           
+            .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+              a.dropdown-item(href='#') Where are my tickets?
+              |             
+              a.dropdown-item(href='#') How to contact the event organizer
+              |             
+              a.dropdown-item(href='#') Help Center
+          |         
+          li.nav-item
+            a.nav-link(href='#') SIGN IN
+          |         
+          li.nav-item
+            a.nav-link(href='#') CREATE EVENT
+    |   
+    .big
+      #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+        .carousel-inner
+          .carousel-item.active
+            img.main(src='/images/homepage_hero_banner_1.jpg', alt='Los Angeles')
+          |         
+          .carousel-item
+            img.main(src='/images/homepage_hero_banner_2.jpg', alt='Chicago')
+          |         
+          .carousel-item
+            img.main(src='/images/homepage_hero_banner_3.jpg', alt='New york')
+          |         
+          .carousel-item
+            img.main(src='/images/homepage_hero_banner_4.jpg', alt='New york')
+    |   
+    .yeji
+      h1 Find your next experience
+      |     
+      .yeji1
+        form.form-inline
+          label.sr-only(for='inlineFormInputName2') Name
+          |         
+          input#inlineFormInputName2.form-control.mb-2.mr-sm-2.mb-sm-0(type='text', placeholder='Search events or categories')
+          |         
+          label.sr-only1(for='inlineFormInputName2')
+          |         
+          input#inlineFormInputName2.form-control.mb-2.mr-sm-2.mb-sm-0(type='text', placeholder='City or location')
+          |         
+          select.custom-select
+            option(selected='') All Dates
+            |                         
+            option(value='1') Today
+            |                         
+            option(value='2') Tomorrow
+            |                         
+            option(value='3') This Week
+            |                         
+            option(value='4') This Weekend
+            |                         
+            option(value='5') Next Week
+            |                         
+            option(value='6') Next Month
+          |         
+          button.btn.btn-primary(type='submit') Search
+    |   
+    .pop
+      p Popular Events in Republic of Korea
+    |   
+    .block
+      .card-deck
+        .card
+          img.card-img-top(src='/images/0.png', alt='Card image cap')
+          |         
+          .card-body
+            h2.card-date SAT. DEC 2 10:30 AM
+            |           
+            h4.card-title Conference in South Korea 2018
+            |           
+            p.card-text South Korea. Jeju-do
+          |         
+          .card-footer
+            small.text-muted
+              | #Business #Conference
+              i.fa.fa-download(aria-hidden='true')
+              |                                 
+              i.fa.fa-bookmark-o(aria-hidden='true')
+        |       
+        .card
+          img.card-img-top(src='/images/kim.png', alt='Card image cap')
+          |         
+          .card-body
+            h2.card-date SUN OCT 8 9:33PM
+            |           
+            h4.card-title Yeji is beautiful
+            |           
+            p.card-text Chadwick International, Songdo
+          |         
+          .card-footer
+            small.text-muted
+              | #cute #wonderful
+              i.fa.fa-download(aria-hidden='true')
+              |                                 
+              i.fa.fa-bookmark-o(aria-hidden='true')
+        |       
+        .card
+          img.card-img-top(src='/images/1.png', alt='Card image cap')
+          |         
+          .card-body
+            h2.card-date SUN OCT 8 9:33PM
+            |           
+            h4.card-title Yeji is beautiful
+            |           
+            p.card-text Chadwick International, Songdo
+          |         
+          .card-footer
+            small.text-muted
+              | #cute #wonderful
+              i.fa.fa-download(aria-hidden='true')
+              |                               
+              i.fa.fa-bookmark-o(aria-hidden='true')
+    |   
+    .block
+      .card-deck
+        .card
+          img.card-img-top(src='/images/2.jpg', alt='Card image cap')
+          |         
+          .card-body
+            h2.card-date SUN OCT 8 9:33PM
+            |           
+            h4.card-title Yeji is beautiful
+            |           
+            p.card-text Chadwick International, Songdo
+          |         
+          .card-footer
+            small.text-muted
+              | #cute #wonderful
+              i.fa.fa-download(aria-hidden='true')
+              |                                   
+              i.fa.fa-bookmark-o(aria-hidden='true')
+        |       
+        .card
+          img.card-img-top(src='/images/3.jpg', alt='Card image cap')
+          |         
+          .card-body
+            h2.card-date SUN OCT 8 9:33PM
+            |           
+            h4.card-title Yeji is beautiful
+            |           
+            p.card-text Chadwick International, Songdo
+          |         
+          .card-footer
+            small.text-muted
+              | #cute #wonderful
+              i.fa.fa-download(aria-hidden='true')
+              |                                   
+              i.fa.fa-bookmark-o(aria-hidden='true')
+        |       
+        .card
+          img.card-img-top(src='/images/4.jpg', alt='Card image cap')
+          |         
+          .card-body
+            h2.card-date SUN OCT 8 9:33PM
+            |           
+            h4.card-title Yeji is beautiful
+            |           
+            p.card-text Chadwick International, Songdo
+          |         
+          .card-footer
+            small.text-muted
+              | #cute #wonderful
+              i.fa.fa-download(aria-hidden='true')
+              |                                 
+              i.fa.fa-bookmark-o(aria-hidden='true')
+    |   
+    .block
+      .card-deck
+        .card
+          img.card-img-top(src='/images/5.png', alt='Card image cap')
+          |         
+          .card-body
+            h2.card-date SUN OCT 8 9:33PM
+            |           
+            h4.card-title Yeji is beautiful
+            |           
+            p.card-text Chadwick International, Songdo
+          |         
+          .card-footer
+            small.text-muted
+              | #cute #wonderful
+              i.fa.fa-download(aria-hidden='true')
+              |                                     
+              i.fa.fa-bookmark-o(aria-hidden='true')
+        |       
+        .card
+          img.card-img-top(src='/images/6.png', alt='Card image cap')
+          |         
+          .card-body
+            h2.card-date SUN OCT 8 9:33PM
+            |           
+            h4.card-title Yeji is beautiful
+            |           
+            p.card-text Chadwick International, Songdo
+          |         
+          .card-footer
+            small.text-muted
+              | #cute #wonderful
+              i.fa.fa-download(aria-hidden='true')
+              |                                     
+              i.fa.fa-bookmark-o(aria-hidden='true')
+        |       
+        .card
+          img.card-img-top(src='/images/7.png', alt='Card image cap')
+          |         
+          .card-body
+            h2.card-date SUN OCT 8 9:33PM
+            |           
+            h4.card-title Yeji is beautiful
+            |           
+            p.card-text Chadwick International, Songdo
+          |         
+          .card-footer
+            small.text-muted
+              | #cute #wonderful
+              i.fa.fa-download(aria-hidden='true')
+              |                                   
+              i.fa.fa-bookmark-o(aria-hidden='true')
+    |   
+    .block
+      .card-deck
+        .card
+          img.card-img-top(src='/images/8.jpg', alt='Card image cap')
+          |         
+          .card-body
+            h2.card-date SUN OCT 8 9:33PM
+            |           
+            h4.card-title Yeji is beautiful
+            |           
+            p.card-text Chadwick International, Songdo
+          |         
+          .card-footer
+            small.text-muted
+              | #cute #wonderful
+              i.fa.fa-download(aria-hidden='true')
+              |                                       
+              i.fa.fa-bookmark-o(aria-hidden='true')
+        |       
+        .card
+          img.card-img-top(src='/images/9.jpg', alt='Card image cap')
+          |         
+          .card-body
+            h2.card-date SUN OCT 8 9:33PM
+            |           
+            h4.card-title Yeji is beautiful
+            |           
+            p.card-text Chadwick International, Songdo
+          |         
+          .card-footer
+            small.text-muted
+              | #cute #wonderful
+              i.fa.fa-download(aria-hidden='true')
+              |                                       
+              i.fa.fa-bookmark-o(aria-hidden='true')
+        |       
+        .card
+          img.card-img-top(src='/images/10.png', alt='Card image cap')
+          |         
+          .card-body
+            h2.card-date SUN OCT 8 9:33PM
+            |           
+            h4.card-title Yeji is beautiful
+            |           
+            p.card-text Chadwick International, Songdo
+          |         
+          .card-footer
+            small.text-muted
+              | #cute #wonderful
+              i.fa.fa-download(aria-hidden='true')
+              |                                     
+              i.fa.fa-bookmark-o(aria-hidden='true')
+    |   
+    .block
+      .card-deck
+        .card
+          img.card-img-top(src='/images/11.jpg', alt='Card image cap')
+          |         
+          .card-body
+            h2.card-date SUN OCT 8 9:33PM
+            |           
+            h4.card-title Yeji is beautiful
+            |           
+            p.card-text Chadwick International, Songdo
+          |         
+          .card-footer
+            small.text-muted
+              | #cute #wonderful
+              i.fa.fa-download(aria-hidden='true')
+              |                                     
+              i.fa.fa-bookmark-o(aria-hidden='true')
+        |       
+        .card
+          img.card-img-top(src='/images/12.png', alt='Card image cap')
+          |         
+          .card-body
+            h2.card-date SUN OCT 8 9:33PM
+            |           
+            h4.card-title Yeji is beautiful
+            |           
+            p.card-text Chadwick International, Songdo
+          |         
+          .card-footer
+            small.text-muted
+              | #cute #wonderful
+              i.fa.fa-download(aria-hidden='true')
+              |                                     
+              i.fa.fa-bookmark-o(aria-hidden='true')
+        |       
+        .card
+          img.card-img-top(src='/images/13.png', alt='Card image cap')
+          |         
+          .card-body
+            h2.card-date SUN OCT 8 9:33PM
+            |           
+            h4.card-title Yeji is beautiful
+            |           
+            p.card-text Chadwick International, Songdo
+          |         
+          .card-footer
+            small.text-muted
+              | #cute #wonderful
+              i.fa.fa-download(aria-hidden='true')
+              |                                   
+              i.fa.fa-bookmark-o(aria-hidden='true')
+    |   
+    .foot
+      button.btn.btn-outline-primary(type='button') SEE MORE
+    |   
+    p
+    |   
+    .foot1
+      h4 Browse by Top Categories
+    // Stack the columns on mobile by making one full-width and the other half-width
+    .Fimg
+      div
+        img.footimg2(src='roy.jpg', alt='Card image cap')
+        |       
+        img.footimg(src='woo.jpg', alt='Card image cap')
+      |     
+      div
+        img.footimg(src='woo.jpg', alt='Card image cap')
+        |       
+        img.footimg(src='woo.jpg', alt='Card image cap')
+        |       
+        img.footimg(src='woo.jpg', alt='Card image cap')
+      |     
+      div
+        img.footimg(src='woo.jpg', alt='Card image cap')
+        |       
+        img.footimg2(src='roy.jpg', alt='Card image cap')
+    |   
+    .footer
+      .ultype1
+        ul.ultype
+          li
+            h7.unit Use Eventbrite
+          |         
+          li
+            | How It Works
+          |         
+          li
+            | For Large &amp; Complex Events
+          |         
+          li
+            | Pricing
+          |         
+          li
+            | Community Guidelines
+          |         
+          li
+            | Eventbrite Mobile App
+          |         
+          li
+            | Eventbrite Check-In App
+          |         
+          li
+            | Eventbrite Spectrum
+          |         
+          li
+            | Rally-Fun Things To Do
+          |         
+          li
+            | Event Organizing Resources
+          |         
+          li
+            | Sitemap
+        |       
+        ul.ultype
+          li
+            h7.unit Plan Events
+          |         
+          li
+            | Conference Management Software
+          |         
+          li
+            | Reunions
+          |         
+          li
+            | Nonprofits &amp; Fundraisers
+          |         
+          li
+            | Eventbrite Reviews
+          |         
+          li
+            | Sell Tickets
+          |         
+          li
+            | Event Management &amp; Planning
+          |         
+          li
+            | Online Event Registration
+          |         
+          li
+            | Online RSVP
+          |         
+          li
+            | Venue Booking &amp; Management
+          |         
+          li
+            | Event Promotion
+        |       
+        ul.ultype
+          li
+            h7.unit Find Events
+          |         
+          li
+            | Boston Events
+          |         
+          li
+            | Chicago Events
+          |         
+          li
+            | Denver Events
+          |         
+          li
+            | Houston zzzEvents
+          |         
+          li
+            | Los Angeles Events
+          |         
+          li
+            | Nashville Events
+          |         
+          li
+            | New York Events
+          |         
+          li
+            | San Diego Events
+          |         
+          li
+            | San Francisco Events
+          |         
+          li
+            | All Cities
+        |       
+        ul.ultype
+          li
+            h7.unit Connect With Us
+          |         
+          li
+            i.fa.fa-envelope(aria-hidden='true')
+            |  Contact Support
+          |         
+          li
+            i.fa.fa-envelope(aria-hidden='true')
+            |  Contact Sales
+          |         
+          li
+            i.fa.fa-twitter-square(aria-hidden='true')
+            |  Twitter
+          |         
+          li
+            i.fa.fa-facebook-square(aria-hidden='true')
+            |  Facebook
+          |         
+          li
+            i.fa.fa-linkedin-square(aria-hidden='true')
+            |  Linkedln
+          |         
+          li
+            i.fa.fa-instagram(aria-hidden='true')
+            |  Instagram
+          |         
+          li
+            i.fa.fa-google-plus(aria-hidden='true')
+            |  Google+
+      |     
+      .team
+        ul.ultype2
+          p
+            h7.unit Coutry
+          |         
+          li
+            | Argentina
+          |         
+          li
+            | Australia
+          |         
+          li
+            | Brasil
+          |         
+          li
+            | Canada(EN)
+          |         
+          li
+            | Canadan(FR)
+          |         
+          li
+            | Chile
+          |         
+          li
+            | Colombia
+          |         
+          li
+            | Deutschland
+          |         
+          li
+            | Espana
+          |         
+          li
+            | Erance
+          |         
+          li
+            | Hong Kong
+          |         
+          li
+            | Ireland
+          |         
+          li
+            | Italia
+          |         
+          li
+            | Mexico
+          |         
+          li
+            | Nederland
+          |         
+          li
+            | New Zealand
+          |         
+          li
+            | Peru
+          |         
+          li
+            | Portugal
+          |         
+          li
+            | Singapore
+          |         
+          li
+            | United Kingdom
+          |         
+          li
+            | United States
+      |     
+      .team
+        ul.ultype2
+          li
+            | About
+          |         
+          li
+            | Blog
+          |         
+          li
+            | Help
+          |         
+          li
+            | Careers
+          |         
+          li
+            | Press
+          |         
+          li
+            | Security
+          |         
+          li
+            | Developers
+          |         
+          li
+            | Terms
+          |         
+          li
+            | Privacy
+          |         
+          li
+            | Cookies
