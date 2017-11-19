@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
+var session = require('express-session');
+var methodOverride = require('method-override');
 var flash = require('connect-flash');
 var mongoose   = require('mongoose');
 var passport = require('passport');
@@ -12,11 +14,17 @@ var passport = require('passport');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+var passportConfig = require('./lib/passport-config');
+
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+// Pug의 local에 moment라이브러리와 querystring 라이브러리를 사용할 수 있도록.
+app.locals.moment = require('moment');
+app.locals.querystring = require('querystring');
 
 mongoose.Promise = global.Promise; // ES6 Native Promise를 mongoose에서 사용한다.
 const connStr = 'mongodb://yeji:dkdld0522@ds113586.mlab.com:13586/yeji';
@@ -32,16 +40,35 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(sassMiddleware({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  indentedSyntax: false, // true = .sass and false = .scss
-  sourceMap: true
-}));
+
 // _method를 통해서 method를 변경할 수 있도록 함. PUT이나 DELETE를 사용할 수 있도록.
 app.use(methodOverride('_method', {methods: ['POST', 'GET']}));
 
+// session을 사용할 수 있도록.
+app.use(session({
+  resave: true,
+  saveUninitialized: true,
+  secret: 'long-long-long-secret-string-1313513tefgwdsvbjkvasd'
+}));
+
+app.use(flash()); // flash message를 사용할 수 있도록
+
+// public 디렉토리에 있는 내용은 static하게 service하도록.
 app.use(express.static(path.join(__dirname, 'public')));
+
+//=======================================================
+// Passport 초기화
+//=======================================================
+app.use(passport.initialize());
+app.use(passport.session());
+passportConfig(passport);
+
+// pug의 local에 현재 사용자 정보와 flash 메시지를 전달하자.
+app.use(function(req, res, next) {
+  res.locals.currentUser = req.user;  // passport는 req.user로 user정보 전달
+  res.locals.flashMessages = req.flash();
+  next();
+});
 
 app.use('/', index);
 app.use('/users', users);
@@ -53,14 +80,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-app.use(flash()); // flash message를 사용할 수 있도록
-//=======================================================
-// Passport 초기화
-//=======================================================
-app.use(passport.initialize());
-app.use(passport.session());
-passportConfig(passport);
-
 
 // error handler
 app.use(function(err, req, res, next) {

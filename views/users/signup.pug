@@ -1,53 +1,21 @@
 extends ../layout
 
 block content
-    nav.navbar.navbar-expand-lg.navbar-light.bg-light
-        a.navbar-brand(href='#') Eventbrite
-        |     
-        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
-            span.navbar-toggler-icon
-        |     
-        #navbarNavDropdown.collapse.navbar-collapse
-            ul.navbar-nav
-            li.nav-item.active
-                a.nav-link(href='#') BROWSE EVENTS
-            |         
-            li.nav-item.dropdown
-                a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='http://example.com', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-                | ORGANIZE
-                |           
-                .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
-                a.dropdown-item(href='#') Overview
-                |             
-                a.dropdown-item(href='#') Pricing
-                |             
-                a.dropdown-item(href='#') Blog
-                |             
-                a.dropdown-item(href='#') Resources
-            |         
-            li.nav-item
-                a.nav-link(href='#') SIGN UP 
-            |         
-            li.nav-item
-                a.nav-link(href='#') SIGN IN
-            |         
-            li.nav-item
-                a.nav-link(href='#') CREATE EVENT
     .container
-    h1.main-title Register
-    form(action='/users', method='POST')
-      .form-group
-        label(for='name') Name
-        input.form-control(type='text', id='name', name='name', placeholder='Your name')
-      .form-group
-        label(for='email') Email address
-        input.form-control(type='email', id='email', name='email', placeholder='Email')
-      .form-group
-        label(for='password') Password
-        input.form-control(type='password', id='password', name='password', placeholder='Password')
-      .form-group
-        label(for='password_confirmation') Password Confirmation
-        input.form-control(type='password', id='password_confirmation', name='password_confirmation', placeholder='Password')
-      a.btn.btn-outline-secondary(href='/users') List
-      | 
-      button.btn.btn-primary(type='submit') Register 
+        h1.main-title Register
+        form(action='/users/register', method='POST')
+            .form-group
+                label(for='name') Name
+                input.form-control(type='text', id='name', name='name', placeholder='Your name')
+            .form-group
+                label(for='email') Email address
+                input.form-control(type='email', id='email', name='email', placeholder='Email')
+            .form-group
+                label(for='password') Password
+                input.form-control(type='password', id='password', name='password', placeholder='Password')
+            .form-group
+                label(for='password_confirmation') Password Confirmation
+                input.form-control(type='password', id='password_confirmation', name='password_confirmation', placeholder='Password')
+            a.btn.btn-outline-secondary(href='/users') List
+            | 
+            button.btn.btn-primary(type='submit') Register 
