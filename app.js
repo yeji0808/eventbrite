@@ -13,6 +13,7 @@ var passport = require('passport');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var events = require('./routes/events');
 
 var passportConfig = require('./lib/passport-config');
 
@@ -44,6 +45,15 @@ app.use(cookieParser());
 // _method를 통해서 method를 변경할 수 있도록 함. PUT이나 DELETE를 사용할 수 있도록.
 app.use(methodOverride('_method', {methods: ['POST', 'GET']}));
 
+// sass, scss를 사용할 수 있도록
+app.use(sassMiddleware({
+  src: path.join(__dirname, 'public'),
+  dest: path.join(__dirname, 'public'),
+  indentedSyntax: false, // true = .sass and false = .scss
+  debug: true,
+  sourceMap: true
+}));
+
 // session을 사용할 수 있도록.
 app.use(session({
   resave: true,
@@ -72,6 +82,7 @@ app.use(function(req, res, next) {
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/events', events);
 require('./routes/auth')(app, passport);
 
 // catch 404 and forward to error handler

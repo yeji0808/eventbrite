@@ -5,6 +5,9 @@ $gray: gray;
 $color_charade_approx: #282c35;
 $color_nobel_approx: #b1b1b1;
 
+.navbar-light .navbar-brand {
+	color: $color_burning_orange_approx;
+  }
 .navbar-nav {
 	margin-left: 62%;
 }

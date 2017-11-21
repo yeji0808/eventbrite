@@ -1,0 +1,85 @@
+.form-group
+  label(for="title") * Event Title
+  input.form-control(type="text", name="title", placeholder="What's your event?", value=event.title)
+.form-group
+  label(for="place") * Place
+  input.form-control(type="text", name="place", placeholder="Where?", value=event.place)
+.form-group
+  label(for="start") * Start Time
+  input.form-control(type="text", name="start", placeholder="When start?", value=event.start)
+.form-group
+  label(for="end") * End Time
+  input.form-control(type="text", name="end", placeholder="When end?", value=event.end)
+.form-group
+  label(for="event") * Event
+  textarea.form-control(name="content", rows="5", placeholder="Explain your event.")= event.content
+.form-group
+  label(for="group_name") * Group Name
+  input.form-control(type="text", name="group_name", placeholder="What's your group name?", value=event.group_name)
+.form-group
+  label(for="group_explain") * Group Explain
+  textarea.form-control(name="group_explain", rows="3", placeholder="Explain your group.")= event.group_explain
+.kind
+    label * Kind of Event
+      |
+      .kind-group     
+        .form-check.form-check-inline
+            label.form-check-label
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions', value='option1')
+                |  Festival
+        .form-check.form-check-inline
+            label.form-check-label
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions', value='option1')
+                |  Conference
+        .form-check.form-check-inline
+            label.form-check-label
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions', value='option1')
+                |  Exhibit
+        .form-check.form-check-inline
+            label.form-check-label
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions', value='option1')
+                |  Lecture
+        .form-check.form-check-inline
+            label.form-check-label
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions', value='option1')
+                |  Individual 
+.category
+    label * Category of Event
+      |
+      .category-group     
+        .form-check.form-check-inline
+            label.form-check-label
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                |  Literature
+        .form-check.form-check-inline
+            label.form-check-label
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                |  Language
+        .form-check.form-check-inline
+            label.form-check-label
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                |  Science
+        .form-check.form-check-inline
+            label.form-check-label
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                |  Math
+        .form-check.form-check-inline
+            label.form-check-label
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                |  Sports
+        .form-check.form-check-inline
+            label.form-check-label
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                |  Music
+        .form-check.form-check-inline
+            label.form-check-label
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                |  Dance
+        .form-check.form-check-inline
+            label.form-check-label
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                |  Art   
+.form-group
+  label(for="tags") Tags
+  input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=event.tags ? event.tags.join(" ") : "")
+                                                  
