@@ -37,7 +37,7 @@ router.post('/confirmId', function(req, res, next) {
       from: 'yejji0808@naver.com',
       to: req.body.email,
       subject:'비밀번호 변경 안내',
-      text: 'http://localhost:3000/passwordUpdateToemail?email='+req.body.email
+      text: 'https://glacial-forest-47226.herokuapp.com/passwordUpdateToemail?email='+req.body.email
       };
     transporter.sendMail(mailOptions, (error, info)=>{
       if (error) {

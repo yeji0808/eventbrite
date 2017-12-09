@@ -40,12 +40,12 @@ block content
         .empty
       include _event
 
-      .buttons
-        if event.author && currentUser && event.author.id == currentUser.id
-          | 
-          a.btn.btn-outline-secondary(href=`/events/${event.id}/edit`) Edit
-          | 
-          a.btn.btn-outline-danger.need-confirm-btn(href=`/events/${event.id}?_method=delete`) Delete
+    .buttons
+      if event.author && currentUser && event.author.id == currentUser.id
+        | 
+        a.btn.btn-outline-secondary(href=`/events/${event.id}/edit`) Edit
+        | 
+        a.btn.btn-outline-danger.need-confirm-btn(href=`/events/${event.id}?_method=delete`) Delete
       
     if event.numAnswers > 0
       hr
