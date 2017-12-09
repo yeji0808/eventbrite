@@ -76,3 +76,43 @@
         }
     }
   }
+
+  .empty {
+    margin: 10%;
+}
+
+h5{
+    color: #f6682f;
+}
+
+.form-inline.search-input-group {
+  margin-top: 3%;
+  margin-left: 0%;
+}
+
+.card-name{
+  float: left;
+  padding-left: 3%;
+  padding-top: 3%;
+  font-size: 200%;
+  align-self: auto;
+  color: #aaa;
+}
+
+.card-body{
+  float: left;
+  padding-left: 3%;
+}
+
+.fa.fa-user-circle{
+  color: #f6682f;
+  padding-right: 0.5em;
+}
+
+a {
+  color: gray;
+}
+
+hr {
+  padding-top: 3%;
+}

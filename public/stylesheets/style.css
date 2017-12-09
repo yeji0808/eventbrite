@@ -155,6 +155,21 @@ h1 {
 .btn-primary {
   background-color: #f6682f; }
 
+.container .clearfix {
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 5%; }
+
+h3 {
+  color: #f6682f; }
+
+.sr-only {
+  padding-bottom: 5%; }
+
+.event.show {
+  background-color: #b1b1b1;
+  height: 1mm; }
+
 .main-title .small {
   float: right;
   font-size: 1rem;
@@ -213,5 +228,37 @@ h1 {
 .show .container .btn .btn-outline-primary {
   background-color: #f6682f;
   color: white; }
+
+.empty {
+  margin: 10%; }
+
+h5 {
+  color: #f6682f; }
+
+.form-inline.search-input-group {
+  margin-top: 3%;
+  margin-left: 0%; }
+
+.card-name {
+  float: left;
+  padding-left: 3%;
+  padding-top: 3%;
+  font-size: 200%;
+  align-self: auto;
+  color: #aaa; }
+
+.card-body {
+  float: left;
+  padding-left: 3%; }
+
+.fa.fa-user-circle {
+  color: #f6682f;
+  padding-right: 0.5em; }
+
+a {
+  color: gray; }
+
+hr {
+  padding-top: 3%; }
 
 /*# sourceMappingURL=style.css.map */

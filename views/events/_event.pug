@@ -1,4 +1,3 @@
-.content= event.content
 .tags.badges
   each tag in event.tags
     span.badge.badge-phill.badge-secondary= tag
@@ -6,12 +5,11 @@
 .row
   .col-sm
     .numbers.
-      #[span.number.num-votes= event.numLikes] likes,
-      #[span.number.num-answers= event.numAnswers] answers,
+      #[span.number.num-answers= event.numAnswers] participations,
       #[span.number.num-views= event.numReads] reads
   .col-sm
     .author
-      | asked on #{moment(event.createdAt).format('YYYY-MM-DD')}
+      | posted on #{moment(event.createdAt).format('YYYY-MM-DD')}
       if event.author
         | 
         | by #[a(href=`/users/${event.author.id}`)= event.author.name] 

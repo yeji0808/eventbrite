@@ -5,12 +5,43 @@ block content
     h1.main-title= event.title
 
     .event.show
+    h5 Place
+    h6
+      .place= event.place
+    h5 Start
+    h6
+      .start= event.start
+    h5 End
+    h6
+      .end= event.end
+    h5 Content
+    h6
       .content= event.content
+    h5 Group Name
+    h6
+      .group_name= event.group_name
+    h5 Group Explain
+    h6
+      .group_explain= event.group_explain
+    h5 Kind of Event
+    h6
+      .koe= event.koe
+    h5 Category of Event
+    h6
+      .inlineRadioOptions2= event.inlineRadioOptions2
+    if event.inlineRadioOptions3 == 'charge'
+      h5 Charge
+      h6
+        .inlineRadioOptions3= event.inlineRadioOptions3 +" : "+event.price
+    else
+      h5 Charge
+      h6
+        .inlineRadioOptions3= event.inlineRadioOptions3    
+        .empty
       include _event
 
       .buttons
-        button.btn.btn-primary #[i.fa.fa-thumbs-up] Like
-        if currentUser && event.author.id == currentUser.id
+        if event.author && currentUser && event.author.id == currentUser.id
           | 
           a.btn.btn-outline-secondary(href=`/events/${event.id}/edit`) Edit
           | 
@@ -18,14 +49,22 @@ block content
       
     if event.numAnswers > 0
       hr
-      h3 #{event.numAnswers} Answer(s)
+      h3 #{event.numAnswers} Participation(s)
+        
+    if event.author && currentUser && event.author.id == currentUser.id
       .answers.show
         each answer in answers
           include _answer
+    else if currentUser 
+      .answers.show
+        each answer in answers
+          if currentUser.id == answer.author.id
+            include _answer
+      
 
     form(action=`/events/${event.id}/answers`, method='POST')
       .form-group
-        label(for='answer') Your Answer
+        label(for='answer') Your participation
         textarea.form-control(name="content", rows="5")
-      button.btn.btn-primary(type="submit") Post Your Answer
-
+      button.btn.btn-primary(type="submit") Register
+    .empty

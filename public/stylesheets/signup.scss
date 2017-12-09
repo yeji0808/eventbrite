@@ -1,4 +1,5 @@
 $color_burning_orange_approx: #f6682f;
+$color_nobel_approx: #b1b1b1;
 
 .container .main-title{
     color: $color_burning_orange_approx;
@@ -6,4 +7,23 @@ $color_burning_orange_approx: #f6682f;
 
 .btn-primary{
     background-color: $color_burning_orange_approx;   
+}
+
+.container .clearfix {
+    padding-left:20%;
+    padding-right:20%;
+    padding-top: 5%;
+}
+
+h3 {
+    color: $color_burning_orange_approx;
+}
+
+.sr-only {
+    padding-bottom: 5%;
+}
+
+.event.show {
+    background-color: $color_nobel_approx;
+    height: 1mm;
 }

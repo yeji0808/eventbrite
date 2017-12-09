@@ -11,7 +11,7 @@
   label(for="end") * End Time
   input.form-control(type="text", name="end", placeholder="When end?", value=event.end)
 .form-group
-  label(for="event") * Event
+  label(for="content") * Event
   textarea.form-control(name="content", rows="5", placeholder="Explain your event.")= event.content
 .form-group
   label(for="group_name") * Group Name
@@ -25,23 +25,23 @@
       .kind-group     
         .form-check.form-check-inline
             label.form-check-label
-                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions', value='option1')
+                input#inlineRadio1.form-check-input(type='radio', name='koe', value='festival')
                 |  Festival
         .form-check.form-check-inline
             label.form-check-label
-                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions', value='option1')
+                input#inlineRadio1.form-check-input(type='radio', name='koe', value='conference')
                 |  Conference
         .form-check.form-check-inline
             label.form-check-label
-                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions', value='option1')
+                input#inlineRadio1.form-check-input(type='radio', name='koe', value='exhibit')
                 |  Exhibit
         .form-check.form-check-inline
             label.form-check-label
-                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions', value='option1')
+                input#inlineRadio1.form-check-input(type='radio', name='koe', value='lecture')
                 |  Lecture
         .form-check.form-check-inline
             label.form-check-label
-                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions', value='option1')
+                input#inlineRadio1.form-check-input(type='radio', name='koe', value='individual')
                 |  Individual 
 .category
     label * Category of Event
@@ -49,37 +49,57 @@
       .category-group     
         .form-check.form-check-inline
             label.form-check-label
-                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='literature')
                 |  Literature
         .form-check.form-check-inline
             label.form-check-label
-                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='language')
                 |  Language
         .form-check.form-check-inline
             label.form-check-label
-                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='science')
                 |  Science
         .form-check.form-check-inline
             label.form-check-label
-                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='math')
                 |  Math
         .form-check.form-check-inline
             label.form-check-label
-                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='sports')
                 |  Sports
         .form-check.form-check-inline
             label.form-check-label
-                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='music')
                 |  Music
         .form-check.form-check-inline
             label.form-check-label
-                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='dance')
                 |  Dance
         .form-check.form-check-inline
             label.form-check-label
-                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='option1')
+                input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions2', value='art')
                 |  Art   
+.category
+    label * Charge
+      |
+.category-group
+    .form-check.form-check-inline
+        .input-group
+          lable.input-group-addon
+            input(type='radio', name='inlineRadioOptions3', value='free')
+          |     
+          span.input-group-addon Free
+
+    .form-check.form-check-inline
+        .input-group
+          lable.input-group-addon
+            input(type='radio', aria-label='Checkbox for following text input', name='inlineRadioOptions3', value='charge')
+          |  
+          span.input-group-addon Charge
+          |       
+          input.form-control(type='text', aria-label='Text input with checkbox',placeholder="How much?",name='price')
+
 .form-group
-  label(for="tags") Tags
+  label(for="tags") * Tags
   input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=event.tags ? event.tags.join(" ") : "")
-                                                  
+

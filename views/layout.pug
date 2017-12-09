@@ -20,7 +20,7 @@ html
       #navbarNavDropdown.collapse.navbar-collapse
         ul.navbar-nav
           li.nav-item.active
-            a.nav-link(href='#') BROWSE EVENTS
+            a.nav-link(href='/events') BROWSE EVENTS
           |         
           li.nav-item.dropdown
             a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='http://example.com', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
@@ -57,7 +57,7 @@ html
               a.nav-link(href='/signout') Signout
           |         
           li.nav-item
-            a.nav-link(href='/events') CREATE EVENT
+            a.nav-link(href='/events/new') CREATE EVENT
     |
     block hero-unit
     if flashMessages
