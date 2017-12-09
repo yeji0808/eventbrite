@@ -15,6 +15,7 @@ pass: 'dkdld0522!'
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  console.log('초기화면');
   res.render('index', { title: 'Express' });
 });
 
@@ -71,14 +72,14 @@ router.get('/reset-password', function(req, res, next) {
 
 //받은 이메일로 패스워드 변경하기화면이동
 router.get('/passwordUpdateToemail', function(req, res, next) {
-  console.log('비밀번호 재설정 화면');
+  console.log('비밀번호 재설정 화면입니다.');
   console.log(req.query.email);
   res.render('users/updatePassword', { email: req.query.email });
 });
 
 //변경된 패스워드로 업데이트
 router.post('/updatePassword', catchErrors(async (req, res, next) => {
-  console.log('비밀번호 변경 완료')
+  console.log('비밀번호 변경 완료입니다.')
   console.log(req.body)
   const user = await User.findOne({email: req.body.email});
   if (!user) {
