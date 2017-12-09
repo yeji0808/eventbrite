@@ -51,6 +51,7 @@ router.get('/new', needAuth, (req, res, next) => {
 
 router.get('/:id/edit', needAuth, catchErrors(async (req, res, next) => {
   const event = await Events.findById(req.params.id);
+  console.log('수정할 이벤트 내용',event);
   res.render('events/edit', {event: event});
 }));
 
@@ -65,7 +66,7 @@ console.log(event);
   res.render('events/show', {event: event, answers: answers});
 }));
 
-router.put('/:id', catchErrors(async (req, res, next) => {
+router.post('/:id', catchErrors(async (req, res, next) => {
   const event = await Events.findById(req.params.id);
 
   if (!event) {
@@ -84,7 +85,7 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   event.inlineRadioOptions3 =  req.body.inlineRadioOptions3;
   event.price = req.body.price;
   event.tags = req.body.tags.split(" ").map(e => e.trim());
-
+  console.log('/--------------이벤트변경---------------');
   await event.save();
   req.flash('success', 'Successfully updated');
   res.redirect('/events');
